@@ -1,105 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Skills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Seth Whitesell</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/main.js" defer></script>
 </head>
 
-<body class="bg-gray-100 text-gray-900 h-full flex flex-col">
+<body>
 
   <!-- Navigation -->
-  <nav class="bg-gray-900 shadow">
-    <div class="max-w-4xl mx-auto flex gap-6 p-4 text-white">
-      <a href="index.html" class="hover:text-indigo-400">Home</a>
-      <a href="education.html" class="hover:text-indigo-400">Education</a>
-      <a href="skills.html" class="font-semibold border-b-2 border-indigo-400">
-        Skills
-      </a>
-      <a href="projects.html" class="hover:text-indigo-400">Projects</a>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="projects.html">Projects</a>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="flex-1">
-    <div class="max-w-4xl mx-auto px-6 py-12">
+  <main class="page-container">
 
-      <h1 class="text-3xl font-bold mb-8">Skills</h1>
+    <h1>Skills</h1>
 
-      <!-- Offensive Cyber Security -->
-      <div class="mb-4 border rounded bg-white">
-        <button class="skill-toggle w-full flex justify-between items-center p-4 text-left font-semibold">
-          Offensive Cyber Security
-          <span class="arrow">▾</span>
-        </button>
+    <!-- Offensive Cyber Security -->
+    <div class="accordion skill-card">
+      <button class="skill-toggle">
+        Offensive Cyber Security
+        <span class="arrow">▾</span>
+      </button>
 
-        <div class="skill-details hidden px-6 pb-4 text-gray-700">
-          <ul class="list-disc list-inside space-y-1">
-            <li>Penetration Testing</li>
-            <li>Active Directory Attacks</li>
-            <li>Privilege Escalation</li>
-            <li>Web Application Attacks</li>
-            <li>Post-Exploitation & Lateral Movement</li>
-            <li>Living Off the Land Techniques</li>
-          </ul>
-        </div>
+      <div class="skill-details">
+        <ul>
+          <li>Penetration Testing</li>
+          <li>Active Directory Attacks</li>
+          <li>Privilege Escalation</li>
+          <li>Web Application Attacks</li>
+          <li>Post-Exploitation & Lateral Movement</li>
+          <li>Living Off the Land Techniques</li>
+        </ul>
       </div>
-
-      <!-- Programming & Scripting -->
-      <div class="mb-4 border rounded bg-white">
-        <button class="skill-toggle w-full flex justify-between items-center p-4 text-left font-semibold">
-          Programming & Scripting
-          <span class="arrow">▾</span>
-        </button>
-
-        <div class="skill-details hidden px-6 pb-4 text-gray-700">
-          <ul class="list-disc list-inside space-y-1">
-            <li>C++ (Studied and implemented at a university level, continued in advanced data structures and algorithms)</li>
-            <li>C (Used in the process of creating a custom operating system)</li>
-            <li>Python (Self taught, used in creating a multi-threaded socket connection for CTF creation)</li>
-            <li>Bash (Script creation)</li>
-            <li>HTML & CSS (Creation of this website)</li>
-            <li>SQL (Content Needed)</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Other Computer Science & IT Skills -->
-      <div class="mb-4 border rounded bg-white">
-        <button class="skill-toggle w-full flex justify-between items-center p-4 text-left font-semibold">
-          Other Computer Science & IT Skills
-          <span class="arrow">▾</span>
-        </button>
-
-        <div class="skill-details hidden px-6 pb-4 text-gray-700">
-          <ul class="list-disc list-inside space-y-1">
-            <li>Networking (TCP/IP, DNS, DHCP)</li>
-            <li>Linux System Administration</li>
-            <li>Windows Server & Active Directory</li>
-            <li>Virtualization (VMware, VirtualBox)</li>
-            <li>Git & Version Control</li>
-            <li>Cloud Fundamentals</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Programming -->
+    <div class="accordion skill-card">
+      <button class="skill-toggle">
+        Programming & Scripting
+        <span class="arrow">▾</span>
+      </button>
+
+      <div class="skill-details">
+        <ul>
+          <li><strong>C++:</strong> Data structures & algorithms</li>
+          <li><strong>C:</strong> Custom OS development</li>
+          <li><strong>Python:</strong> Multi-threaded socket programming</li>
+          <li><strong>Bash:</strong> Script creation</li>
+          <li><strong>HTML & CSS:</strong> This website</li>
+          <li><strong>SQL:</strong> Database querying & schema design</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Other Skills -->
+    <div class="accordion skill-card">
+      <button class="skill-toggle">
+        Other Computer Science & IT Skills
+        <span class="arrow">▾</span>
+      </button>
+
+      <div class="skill-details">
+        <ul>
+          <li>Networking (TCP/IP, DNS, DHCP)</li>
+          <li>Linux System Administration</li>
+          <li>Windows Server & Active Directory</li>
+          <li>Virtualization (VMware, VirtualBox)</li>
+          <li>Git & Version Control</li>
+          <li>Cloud Fundamentals</li>
+        </ul>
+      </div>
+    </div>
+
   </main>
-
-  <!-- Dropdown Script -->
-  <script>
-    document.querySelectorAll('.skill-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const details = button.nextElementSibling;
-        const arrow = button.querySelector('.arrow');
-
-        details.classList.toggle('hidden');
-        arrow.textContent = details.classList.contains('hidden') ? '▾' : '▴';
-      });
-    });
-  </script>
 
 </body>
 </html>

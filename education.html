@@ -1,139 +1,106 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | Seth Whitesell</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Main JS -->
+  <link rel="stylesheet" href="style.css">
   <script src="js/main.js" defer></script>
 </head>
 
-<body class="bg-gray-100 text-gray-900 h-full flex flex-col">
+<body>
 
   <!-- Navigation -->
-  <nav class="bg-gray-900 shadow">
-    <div class="max-w-4xl mx-auto flex gap-6 p-4 text-white">
-      <a href="index.html" class="hover:text-indigo-400">Home</a>
-      <a href="education.html" class="font-semibold border-b-2 border-indigo-400">
-        Education
-      </a>
-      <a href="skills.html" class="hover:text-indigo-400">Skills</a>
-      <a href="projects.html" class="hover:text-indigo-400">Projects</a>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">Home</a>
+      <a href="education.html" class="active">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="flex-1">
-    <div class="max-w-4xl mx-auto px-6 py-12">
+ <main class="page-container">
 
-      <h1 class="text-3xl font-bold mb-8">Education</h1>
+  <h1>Education</h1>
 
-      <!-- Tabs -->
-      <div class="bg-white rounded-lg shadow">
+  <!-- Tabs -->
+  <div class="tabs">
 
-        <!-- Tab Buttons -->
-        <div class="flex border-b">
-          <button
-            class="tab-btn px-6 py-3 font-semibold border-b-2 border-indigo-500 text-indigo-600"
-            onclick="showTab('certifications', this)">
-            Certifications
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('certifications', this)">Certifications</button>
+      <button class="tab-btn" onclick="showTab('masters', this)">Master’s</button>
+      <button class="tab-btn" onclick="showTab('bachelors', this)">Bachelor’s</button>
+      <button class="tab-btn" onclick="showTab('associates', this)">Associate’s</button>
+    </div>
+
+    <div class="tab-content-wrapper">
+
+      <!-- Certifications -->
+      <div id="certifications" class="tab-content">
+        <div class="accordion">
+          <button class="cert-toggle">
+            Certified Penetration Tester Specialist (CPTS) — Active
+            <span class="arrow">▾</span>
           </button>
 
-          <button
-            class="tab-btn px-6 py-3 text-gray-600 hover:text-indigo-600"
-            onclick="showTab('masters', this)">
-            Master’s
-          </button>
-
-          <button
-            class="tab-btn px-6 py-3 text-gray-600 hover:text-indigo-600"
-            onclick="showTab('bachelors', this)">
-            Bachelor’s
-          </button>
-
-          <button
-            class="tab-btn px-6 py-3 text-gray-600 hover:text-indigo-600"
-            onclick="showTab('associates', this)">
-            Associate’s
-          </button>
+          <div class="cert-details">
+            <p><strong>Issuer:</strong> Hack The Box</p>
+            <p><strong>Year:</strong> 2026</p>
+            <p><strong>Focus:</strong> Offensive Security & Penetration Testing</p>
+          </div>
         </div>
+      </div>
 
-        <!-- Tab Content -->
-        <div class="p-6">
+      <!-- Masters -->
+      <div id="masters" class="tab-content hidden">
+        <div class="education-card">
+          <h2>Master of Science in Cybersecurity</h2>
+          <p>Liberty University</p>
+          <p><strong>Graduation:</strong> Spring 2027</p>
+        </div>
+      </div>
 
-          <!-- Certifications -->
-          <div id="certifications" class="tab-content">
-            <div class="mb-4 border rounded bg-gray-50">
-              <button class="cert-toggle w-full flex justify-between items-center p-4 text-left font-semibold">
-                Certified Penetration Tester Specialist (CPTS) — Active
-                <span class="arrow">▾</span>
-              </button>
+      <!-- Bachelors -->
+      <div id="bachelors" class="tab-content hidden">
+        <div class="education-card">
+          <h2>Bachelor of Science in Computer Science: Cybersecurity</h2>
+          <p>Liberty University</p>
+          <p><strong>Graduation:</strong> Spring 2026</p>
 
-              <div class="cert-details hidden px-6 pb-4 text-gray-700">
-                <p><strong>Issuer:</strong> Hack The Box</p>
-                <p><strong>Year:</strong> 2026</p>
-                <p><strong>Focus:</strong> Offensive Security & Penetration Testing</p>
-              </div>
-            </div>
-          </div>
+          <ul>
+            <li>Operating Systems & Architecture</li>
+            <li>Offensive Security</li>
+            <li>Programming</li>
+            <li>Windows & Linux Administration</li>
+          </ul>
+        </div>
+      </div>
 
-          <!-- Masters -->
-          <div id="masters" class="tab-content hidden">
-            <h2 class="text-xl font-semibold">
-              Master of Science in Cybersecurity
-            </h2>
-            <p class="text-gray-700 mt-1">Liberty University</p>
-            <p class="text-gray-600 text-sm mt-1">Graduation: Spring 2027</p>
-          </div>
+      <!-- Associates -->
+      <div id="associates" class="tab-content hidden">
+        <div class="education-card">
+          <h2>Associates of STEM Mathematics</h2>
+          <p>Liberty University (Residential)</p>
+          <p><strong>Graduation:</strong> Spring 2026</p>
+          <p>
+            PreCalculus, Calculus I & II, Statistics,
+            Physics I, Discrete Mathematics I & II
+          </p>
 
-          <!-- Bachelors -->
-          <div id="bachelors" class="tab-content hidden">
-            <h2 class="text-xl font-semibold">
-              Bachelor of Science in Computer Science: Cybersecurity
-            </h2>
-            <p class="text-gray-700 mt-1">Liberty University</p>
-            <p class="text-gray-600 text-sm mt-1">Graduation: Spring 2026</p>
+          <hr style="margin: 20px 0;">
 
-            <ul class="list-disc list-inside mt-4 text-gray-700">
-              <li>Operating Systems and Computer Architecture</li>
-              <li>Offensive Security</li>
-              <li>Programming</li>
-              <li>Windows and Linux System Administration</li>
-            </ul>
-          </div>
-
-          <!-- Associates -->
-          <div id="associates" class="tab-content hidden">
-            <h2 class="text-xl font-semibold">
-              Associates of Stem Mathematics
-            </h2>
-            <p class="text-gray-700 mt-1">
-              Liberty University (Residential)
-            </p>
-            <p class="text-gray-600 text-sm mt-1">
-              Graduation: Spring 2026<br><br>
-              Content: PreCalculus, Calculus I & II, Statistics, Physics I, Discrete Mathematics I & II
-            </p>
-            <br>
-            <h2 class="text-xl font-semibold">
-              Associates of Interdisciplinary Studies
-            </h2>
-            <p class="text-gray-700 mt-1">
-              Liberty University Online Academy
-            </p>
-            <p class="text-gray-600 text-sm mt-1">
-              Graduation: Spring 2022
-            </p>
-          </div>
-
+          <h2>Associates of Interdisciplinary Studies</h2>
+          <p>Liberty University Online Academy</p>
+          <p><strong>Graduation:</strong> Spring 2022</p>
         </div>
       </div>
 
     </div>
-  </main>
+  </div>
+
+</main>
 
 </body>
 </html>
